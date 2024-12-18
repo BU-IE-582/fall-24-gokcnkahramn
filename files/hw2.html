@@ -7799,7 +7799,7 @@ Length: 106, dtype: int64
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">'P_diff_bin'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'P_diff'</span><span class="p">],</span> <span class="n">bins</span><span class="p">)</span>
 
-<span class="c1"># Her bin için analiz</span>
+<span class="c1"># Her bin için analiz (Bu kısımdaki grupalama işini yaparken ChatGPT'den yardım aldım)</span>
 <span class="n">bin_analysis</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'P_diff_bin'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
     <span class="n">Berabere_Olasılığı</span><span class="o">=</span><span class="p">(</span><span class="s1">'result'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">'X'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
     <span class="n">Toplam_Sayı</span><span class="o">=</span><span class="p">(</span><span class="s1">'result'</span><span class="p">,</span> <span class="s1">'size'</span><span class="p">),</span>
@@ -8008,7 +8008,8 @@ Length: 106, dtype: int64
 <div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">first_half_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'halftime'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'1st-half'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#(Bu kısımdaki grupalama işini yaparken ChatGPT'den yardım aldım)</span>
+<span class="n">first_half_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'halftime'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'1st-half'</span><span class="p">]</span>
 <span class="n">first_half_bin_analysis</span> <span class="o">=</span> <span class="n">first_half_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'P_diff_bin'</span><span class="p">)[</span><span class="s1">'result'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
     <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">'X'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -8245,7 +8246,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
 <span class="n">filtered_data_late</span><span class="p">[</span><span class="s1">'P_diff_bin'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">filtered_data_late</span><span class="p">[</span><span class="s1">'P_diff'</span><span class="p">],</span> <span class="n">bins</span><span class="p">)</span>
 
-<span class="c1"># Her bin için analiz</span>
+<span class="c1"># Her bin için analiz (Bu kısımdaki grupalama işini yaparken ChatGPT'den yardım aldım)</span>
 <span class="n">bin_analysis</span> <span class="o">=</span> <span class="n">filtered_data_late</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'P_diff_bin'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
     <span class="n">Berabere_Olasılığı</span><span class="o">=</span><span class="p">(</span><span class="s1">'result'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">'X'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
     <span class="n">Toplam_Sayı</span><span class="o">=</span><span class="p">(</span><span class="s1">'result'</span><span class="p">,</span> <span class="s1">'size'</span><span class="p">),</span>
@@ -8460,7 +8461,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">first_half_data</span> <span class="o">=</span> <span class="n">filtered_data_late</span><span class="p">[</span><span class="n">filtered_data_late</span><span class="p">[</span><span class="s1">'halftime'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'1st-half'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#(Bu kısımdaki grupalama işini yaparken ChatGPT'den yardım aldım)</span>
+
+<span class="n">first_half_data</span> <span class="o">=</span> <span class="n">filtered_data_late</span><span class="p">[</span><span class="n">filtered_data_late</span><span class="p">[</span><span class="s1">'halftime'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'1st-half'</span><span class="p">]</span>
 <span class="n">first_half_bin_analysis</span> <span class="o">=</span> <span class="n">first_half_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'P_diff_bin'</span><span class="p">)[</span><span class="s1">'result'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
     <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">'X'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -8697,7 +8700,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
 <span class="n">filtered_data_red</span><span class="p">[</span><span class="s1">'P_diff_bin'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">filtered_data_red</span><span class="p">[</span><span class="s1">'P_diff'</span><span class="p">],</span> <span class="n">bins</span><span class="p">)</span>
 
-<span class="c1"># Her bin için analiz</span>
+<span class="c1"># Her bin için analiz (Bu kısımdaki grupalama işini yaparken ChatGPT'den yardım aldım)</span>
 <span class="n">bin_analysis</span> <span class="o">=</span> <span class="n">filtered_data_red</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'P_diff_bin'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
     <span class="n">Berabere_Olasılığı</span><span class="o">=</span><span class="p">(</span><span class="s1">'result'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">'X'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
     <span class="n">Toplam_Sayı</span><span class="o">=</span><span class="p">(</span><span class="s1">'result'</span><span class="p">,</span> <span class="s1">'size'</span><span class="p">),</span>
@@ -8912,7 +8915,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">first_half_data</span> <span class="o">=</span> <span class="n">filtered_data_red</span><span class="p">[</span><span class="n">filtered_data_red</span><span class="p">[</span><span class="s1">'halftime'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'1st-half'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#(Bu kısımdaki grupalama işini yaparken ChatGPT'den yardım aldım)</span>
+
+<span class="n">first_half_data</span> <span class="o">=</span> <span class="n">filtered_data_red</span><span class="p">[</span><span class="n">filtered_data_red</span><span class="p">[</span><span class="s1">'halftime'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'1st-half'</span><span class="p">]</span>
 <span class="n">first_half_bin_analysis</span> <span class="o">=</span> <span class="n">first_half_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'P_diff_bin'</span><span class="p">)[</span><span class="s1">'result'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
     <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">'X'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -9175,7 +9180,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="s1">'Importance'</span><span class="p">:</span> <span class="n">clf</span><span class="o">.</span><span class="n">feature_importances_</span>
 <span class="p">})</span>
 
-<span class="c1"># Importance Sıralaması</span>
+<span class="c1"># Importance Sıralaması (Bu kısımdaki grupalama işini yaparken ChatGPT'den yardım aldım)</span>
 <span class="n">feature_importances</span> <span class="o">=</span> <span class="n">feature_importances</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Importance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">)</span>
 </pre></div>
@@ -9273,7 +9278,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span class="n">draw_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">mean_draw</span> <span class="o">-</span> <span class="n">mean_pred_draw</span><span class="p">)</span>
 <span class="n">away_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">mean_away</span> <span class="o">-</span> <span class="n">mean_pred_away</span><span class="p">)</span>
 
-<span class="c1"># Sonuçları yazdıralım</span>
+<span class="c1"># Sonuçları yazdıralım (Bu kısımdaki düzenlemelerde ChatGPT'den yardım aldım)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gerçek Home Olasılığı Ortalaması: </span><span class="si">{</span><span class="n">mean_home</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tahmin Edilen Home Olasılığı Ortalaması: </span><span class="si">{</span><span class="n">mean_pred_home</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Home Hata Oranı: </span><span class="si">{</span><span class="n">home_error</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
